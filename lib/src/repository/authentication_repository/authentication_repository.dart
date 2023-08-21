@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:q_note/src/constants/text_strings.dart';
+import 'package:q_note/src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
 import 'package:q_note/src/features/authentication/screens/welcome_screen/welcome_screen.dart';
 import 'package:q_note/src/features/core/screens/dashboard/dashboard.dart';
 import 'package:q_note/src/repository/authentication_repository/exceptions/signup_email_password_failure.dart';
@@ -27,7 +28,7 @@ class AuthenticationRepository extends GetxController {
   /// Methods : Set the initial screen based on the user
   /// If the user is null then the WelcomeScreen will be displayed else the Dashboard will be displayed
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() => const WelcomeScreen()) : Get.offAll(() => const Dashboard());
+    user == null ? Get.offAll(() => const OnBoardingScreen()) : Get.offAll(() => const Dashboard());
   }
 
   /// Methods : Create a new user account with email and password | Future means that this method will be executed in the future
@@ -35,7 +36,7 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
       CustomSnackBarWidget.showGetSnackBar('Welcome to $kAppName.', 'Your account has been created successfully and authenticated. We wish you a great experience with $kAppName.');
-      firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get.offAll(() => const WelcomeScreen());
+      firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get.offAll(() => const OnBoardingScreen());
     } on FirebaseAuthException catch (e) {
       final exception = SignUpWithEmailAndPasswordFailure.code(e.code);
       CustomSnackBarWidget.showGetSnackBar('Error in Sign-Up', exception.message);

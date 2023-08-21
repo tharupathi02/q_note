@@ -4,6 +4,7 @@ import 'package:q_note/src/constants/colors.dart';
 import 'package:q_note/src/constants/image_strings.dart';
 import 'package:q_note/src/constants/text_strings.dart';
 import 'package:q_note/src/features/authentication/models/on_boarding_model.dart';
+import 'package:q_note/src/features/authentication/screens/login/login_screen.dart';
 import 'package:q_note/src/features/authentication/screens/on_boarding/on_boarding_page_widget.dart';
 
 class OnBoardingController extends GetxController {
@@ -39,6 +40,11 @@ class OnBoardingController extends GetxController {
 
   void onPageChangeCallback(int activePageIndex) {
     currentPage.value = activePageIndex;
+    if (currentPage.value == 2) {
+      Future.delayed(const Duration(seconds: 2), () {
+        Get.offAll(() => const LoginScreen());
+      });
+    }
   }
 
   animateToNextSlide() {
