@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:q_note/firebase_options.dart';
 import 'package:q_note/src/constants/colors.dart';
@@ -52,29 +53,50 @@ class _SplashScreenState extends State<SplashScreen> {
                 children: [
                   Text(
                     kAppName,
-                    style: Theme.of(context).textTheme.displayLarge,
+                      style: GoogleFonts.poppins(
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                      ),
                   ),
                   Text(
                     kAppTagLine,
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    style: GoogleFonts.poppins(
+                      fontSize: 25,
+                    ),
                   ),
                 ],
               ),
             ),
-          const AnimatedPositioned(
-              duration: Duration(milliseconds: 1000),
+          AnimatedPositioned(
+              duration: const Duration(milliseconds: 1000),
               top: 200,
-              right: 30,
-              child: Image(
-                image: AssetImage(kSplashScreenIcon),
-                width: 400.0,
-                height: 400.0,
-              ),
+              left: 10,
+              child: Text(
+                'Q.',
+                style: GoogleFonts.poppins(
+                  fontSize: 350,
+                  fontWeight: FontWeight.bold,
+                  color: kPrimaryColor,
+                ),
+              )
             ),
+          AnimatedPositioned(
+              duration: const Duration(milliseconds: 1000),
+              bottom: 80,
+              left: 10,
+              child: Text(
+                'Note',
+                style: GoogleFonts.poppins(
+                  fontSize: 150,
+                  fontWeight: FontWeight.bold,
+                  color: kPrimaryColor,
+                ),
+              )
+          ),
           const AnimatedPositioned(
               duration: Duration(milliseconds: 1000),
-              bottom: 180,
-              left: 20,
+              bottom: 200,
+              right: -70,
               child: Image(
                 image: AssetImage(kSplashScreenImage),
                 width: 400.0,
