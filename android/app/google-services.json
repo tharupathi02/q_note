@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678129041417",
+    "project_id": "q-note-67281",
+    "storage_bucket": "q-note-67281.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678129041417:android:a2d9a362c8cb9bfdb138d8",
+        "android_client_info": {
+          "package_name": "com.leoxtech.q_note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678129041417-178791arsspfck1uoom4fm57mqdsnq7o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3myAvDClWZZYBiEG7EYWqR-Vi27G-Lwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678129041417-178791arsspfck1uoom4fm57mqdsnq7o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
