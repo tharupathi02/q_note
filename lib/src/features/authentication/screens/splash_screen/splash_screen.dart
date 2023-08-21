@@ -8,7 +8,6 @@ import 'package:q_note/src/constants/colors.dart';
 import 'package:q_note/src/constants/image_strings.dart';
 import 'package:q_note/src/constants/sizes.dart';
 import 'package:q_note/src/constants/text_strings.dart';
-import 'package:q_note/src/features/authentication/screens/welcome_screen/welcome_screen.dart';
 import 'package:q_note/src/repository/authentication_repository/authentication_repository.dart';
 
 class SplashScreen extends StatefulWidget {
